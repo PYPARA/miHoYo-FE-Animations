@@ -4,15 +4,26 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.45"
+    "@esotericsoftware/spine-core": "^4.2.11",
+    "@esotericsoftware/spine-threejs": "^4.2.11",
+    "@types/three": "^0.146.0",
+    "element-plus": "^2.2.30",
+    "gsap": "^3.11.4",
+    "sass": "^1.58.0",
+    "stats.js": "^0.17.0",
+    "three": "^0.146.0",
+    "vue": "^3.2.45",
+    "vue-router": "4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
+    "eslint": "^8.33.0",
+    "eslint-plugin-vue": "^9.9.0",
     "vite": "^4.1.0"
   }
 }
