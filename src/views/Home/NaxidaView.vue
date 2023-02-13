@@ -1,6 +1,6 @@
 <template>
   <div class="spine-list">
-    <SpineView class="spine-item" v-for="spine in spineList" :key="spine.id" :config="spine" />
+    <SpineView class="spine-item" v-for="spine in spineList" :key="spine.id" :config="spine" :pathRoot="pathRoot" />
   </div>
 </template>
 
@@ -122,6 +122,8 @@ const spineList = [
     positionY: -100,
   },
 ];
+
+const pathRoot = 'naxida';
 </script>
 
 <style lang="scss" scoped>

@@ -27,6 +27,10 @@ const props = defineProps({
     type: Object,
     default: () => {},
   },
+  pathRoot: {
+    type: String,
+    default: '',
+  },
 });
 
 let scene, camera, renderer;
@@ -37,7 +41,8 @@ let controls;
 let lastFrameTime = Date.now() / 1000;
 
 let spineName = 'naxitan_shouye';
-let baseUrl = `/assets/${spineName}/`;
+let pathRoot = 'assets';
+let baseUrl = `/${pathRoot}/${spineName}/`;
 let skeletonFile = `${spineName}.json`;
 let atlasFile = `${spineName}.atlas`;
 let animation = ref('');
@@ -53,7 +58,8 @@ onMounted(() => {
 
 const getConfig = () => {
   spineName = props.config.id;
-  baseUrl = `/assets/${spineName}/`;
+  pathRoot = props.pathRoot;
+  baseUrl = `/${pathRoot}/${spineName}/`;
   skeletonFile = `${spineName}.json`;
   atlasFile = `${spineName}.atlas`;
   animation.value = props.config.animation;

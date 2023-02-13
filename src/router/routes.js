@@ -1,12 +1,17 @@
 const routes = [
   {
     path: '/',
-    redirect: { name: 'Home' },
+    redirect: { name: 'Hyxc' },
   },
   {
-    path: '/home',
-    name: 'Home',
-    component: () => import('@/views/Home/IndexView.vue'),
+    path: '/naxida',
+    name: 'Naxida',
+    component: () => import('@/views/Home/NaxidaView.vue'),
+  },
+  {
+    path: '/hyxc',
+    name: 'Hyxc',
+    component: () => import('@/views/Home/HyxcView.vue'),
   },
 ];
 
