@@ -1,12 +1,11 @@
 <template>
   <div class="canvas-container" ref="spineRef">
-    <el-select v-model="animation" class="animation-select" placeholder="Select" size="large">
+    <el-select v-model="animation" class="animation-select" placeholder="Select" size="large" @change="animationChange">
       <el-option
         v-for="item in animationList"
         :key="item"
         :label="item"
         :value="item"
-        @change="animationChange"
       />
     </el-select>
   </div>
@@ -91,10 +90,16 @@ const initSpine = () => {
 function load() {
   if (assetManager.isLoadingComplete()) {
     
-    geometry = new THREE.BoxGeometry(200, 200, 200);
+    geometry = new THREE.BoxGeometry(100, 100, 100);
     material = new THREE.MeshBasicMaterial({ color: '0xff0000', wireframe: true });
     mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
+    if(props.config.positionX) {
+      mesh.position.x = props.config.positionX;
+    }
+    if(props.config.positionY) {
+      mesh.position.y = props.config.positionY;
+    }
 
     let atlas = assetManager.require(atlasFile);
     let atlasLoader = new spine.AtlasAttachmentLoader(atlas);
@@ -152,6 +157,7 @@ function render() {
   controls.update();
 
   // update the animation
+  // skeletonMesh.state.setAnimation(0, animation.value, true);
   skeletonMesh.update(delta);
 
   //  ---------- mihoyo start ----------
@@ -196,9 +202,7 @@ function resize() {
 
 const animationChange = (val) => {
   animation.value = val;
-  // skeletonMesh.state.clearTrack(0);
-  // skeletonMesh.state.setAnimation(0, animation.value, true);
-  // requestAnimationFrame(render);
+  skeletonMesh.state.setAnimation(0, animation.value, true);
 };
 </script>
 

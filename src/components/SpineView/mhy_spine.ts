@@ -205,9 +205,8 @@ class AutoBone {
         this.rootBone.autoMovePrevWorldY = this.rootBone.worldY,
         this.rootBone.rotation = this.mixValue(this.rootBone.rotation, m, i)
     } else if (4 === a) {
-      var V = this.rootBone.getWorldScale()
-        , Y = V.x
-        , K = V.y;
+      var Y = this.rootBone.getWorldScaleX()
+        , K = this.rootBone.getWorldScaleY();
       this.updateSpringMagic(e, this.rootBone, r, n, 0, i, Y * K < 0 ? -1 : 1)
     } else
       5 === a && this.updateElasic(e, this.rootBone, n, i)
@@ -407,6 +406,8 @@ class AutoBone {
         throw new Error("unknown mode:" + e.mode)
     }
   }
+
+
 }
 
 class AnimationBase {
@@ -418,6 +419,7 @@ class AnimationBase {
     this.mode = config.mode;
   }
 }
+
 
 class AnimationSine extends AnimationBase {
   public rotateOffset: number;
