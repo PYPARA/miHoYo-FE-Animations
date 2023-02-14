@@ -1,0 +1,15 @@
+mengde_p11_qqer_boom.png
+size:252,111
+filter:Linear,Linear
+scale:0.8
+boom1
+bounds:0,0,124,111
+offsets:1,0,124,111
+boom2
+bounds:125,24,87,64
+offsets:1,0,88,64
+rotate:90
+boom3
+bounds:190,42,69,62
+offsets:0,0,70,62
+rotate:90

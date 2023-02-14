@@ -27,6 +27,36 @@ const spineList = [
     scale: 0.9,
     positionY: -100,
   },
+  {
+    id: 'mengde_p11_luosaliya_a',
+    width: 500,
+    height: 500,
+    scale: 0.6,
+    positionY: -100,
+  },
+  {
+    id: 'mengde_p11_luosaliya_b',
+    width: 600,
+    height: 500,
+    scale: 0.6,
+    positionX: -160,
+    positionY: -100,
+  },
+  {
+    id: 'mengde_p11_qqer_a',
+    width: 300,
+    height: 500,
+    scale: 0.6,
+    positionY: -100,
+  },
+  // {
+  //   id: 'mengde_p11_qqer_boom',
+  //   width: 300,
+  //   height: 500,
+  //   scale: 0.6,
+  //   positionY: -100,
+  // },
+  
 ];
 
 const pathRoot = 'hyxc';
